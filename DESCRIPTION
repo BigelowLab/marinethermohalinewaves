@@ -1,0 +1,15 @@
+Package: marinethermohalinewaves
+Title: Marine Thermohaline Waves (mtw)
+Description: Serving curated Marine Thermohaline Wave (mthw) data using R programming language.
+Version: 0.1
+Encoding: UTF-8
+Depends:
+    R (>= 4.2)
+Imports:
+  shiny
+Maintainer: Ben Tupper <btupper@bigelow.org>
+Author: Ben Tupper <btupper@bigelow.org>
+URL: https://github.com/BigelowLab/marinethermohalinewaves
+License: MIT + file LICENSE
+LazyData: true
+RoxygenNote: 7.3.2
