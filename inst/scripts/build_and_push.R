@@ -1,4 +1,6 @@
-
+# Run this when you need to reinstall and push to github
+#
+# > source("path/to/build_and_push.R")
 path = "/mnt/s1/projects/ecocast/corecode/R/marinethermohalinewaves"
 devtools::document(path)
 devtools::install(path, upgrade = FALSE)

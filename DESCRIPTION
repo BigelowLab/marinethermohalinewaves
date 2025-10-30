@@ -6,7 +6,9 @@ Encoding: UTF-8
 Depends:
     R (>= 4.2)
 Imports:
-  shiny
+  shiny,
+  stars,
+  dplyr
 Maintainer: Ben Tupper <btupper@bigelow.org>
 Author: Ben Tupper <btupper@bigelow.org>
 URL: https://github.com/BigelowLab/marinethermohalinewaves

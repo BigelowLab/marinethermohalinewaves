@@ -2,8 +2,11 @@
 
 S3method(plot,mwd)
 S3method(plot,mwe)
+export(add_class)
+export(has_time)
 export(mthw_filename)
 export(mwd_breaks)
 export(plot_mwd_paired)
 export(read_raster)
+export(slice_date)
 export(write_raster)

@@ -4,18 +4,17 @@ suppressPackageStartupMessages({
   library(shiny)
   library(bslib)
   library(bigelowshinytheme)
-  #library(dplyr)
 })
 
 region = 'chfc'
 depths = "sur"
 vars = c("temp", "sal")
 path = system.file(package = "marinethermohalinewaves")
-tempd = mthw::read_raster(filename = mthw_filename(region = region,
+tempd = read_raster(filename = mthw_filename(region = region,
                                                    depth = depths[1],
                                                    variable = "temp",
                                                    path = path))
-sald = mthw::read_raster(filename = mthw_filename(region = region,
+sald = read_raster(filename = mthw_filename(region = region,
                                                    depth = depths[1],
                                                    variable = "sal",
                                                    path = path))
@@ -25,8 +24,8 @@ DATE = DATES[6]
 get_slices = function(date = DATE, dates = DATES){
   ix = which(dates %in% date)
   list(
-    temp = mthw::slice_date(tempd, ix),
-    sal = mthw::slice_date(sald,  ix),
+    temp = slice_date(tempd, ix),
+    sal = slice_date(sald,  ix),
     date = date
   )
 }
@@ -68,9 +67,9 @@ server <- function(input, output, session) {
   
   output$plotOutput <- renderPlot({
     x = get_slices(input$dateSlider)
-    mthw::plot_mwd_paired(x$temp, x$sal,
-                          title = sprintf("Marine Thermohaline Waves %s",
-                                          format(x$date, "%Y-%m-%d")))
+    plot_mwd_paired(x$temp, x$sal,
+                    title = sprintf("Marine Thermohaline Waves %s",
+                                    format(x$date, "%Y-%m-%d")))
   })
   
 }
